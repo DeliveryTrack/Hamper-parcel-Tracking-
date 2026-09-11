@@ -1,113 +1,126 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="hi">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Hamper Gifts Center India — Delivery Tracking</title>
-<style>
-*{box-sizing:border-box}
-body{margin:0;font-family:Inter,Arial,sans-serif;background:#f4f6f8;color:#17202a}
-.header{background:#090909;color:#fff;padding:22px 18px;text-align:center}
-.header h1{margin:0;font-size:22px}.header p{margin:6px 0 0;color:#cfcfcf;font-size:13px}
-.demo{background:#fff3cd;color:#856404;text-align:center;padding:9px;font-size:12px;font-weight:700;border-bottom:1px solid #ffe69c}
-.container{max-width:760px;margin:22px auto;padding:0 14px}
-.card{background:#fff;border-radius:18px;box-shadow:0 8px 28px rgba(0,0,0,.08);padding:20px;margin-bottom:16px}
-.search{display:flex;gap:9px}
-input{flex:1;border:1px solid #d9dee4;border-radius:11px;padding:14px;font-size:15px;outline:none}
-button{border:0;border-radius:11px;background:#111;color:#fff;padding:0 20px;font-weight:700;cursor:pointer}
-.result{display:none}
-.top{display:flex;justify-content:space-between;gap:12px;align-items:flex-start}
-.badge{background:#fff0c2;color:#8a5b00;padding:7px 10px;border-radius:20px;font-size:12px;font-weight:700}
-.id{font-size:13px;color:#69727d;margin-top:5px}
-h2{font-size:19px;margin:0 0 6px}.section-title{font-size:14px;font-weight:800;margin:22px 0 12px}
-.grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-.item{background:#f7f8fa;padding:12px;border-radius:11px}.label{font-size:11px;color:#727b85}.value{font-size:14px;font-weight:700;margin-top:4px}
-.route{position:relative;padding:8px 0 4px}
-.line{height:7px;background:#e4e7eb;border-radius:20px;position:relative;margin:28px 8px}
-.progress{height:7px;background:#111;border-radius:20px;width:58%}
-.dot{position:absolute;top:50%;transform:translate(-50%,-50%);width:17px;height:17px;border-radius:50%;background:#111;border:4px solid #fff;box-shadow:0 0 0 2px #111}
-.dot.start{left:0}.dot.current{left:58%}.dot.end{left:100%;background:#fff}
-.route-labels{display:flex;justify-content:space-between;font-size:12px;font-weight:700}
-.distance{text-align:center;font-size:13px;color:#555;margin-top:12px}
-.timeline{border-left:2px solid #ddd;margin:8px 0 0 8px;padding-left:18px}
-.event{position:relative;margin:0 0 20px}.event:before{content:"";position:absolute;left:-25px;top:3px;width:10px;height:10px;background:#111;border-radius:50%;border:3px solid #fff;box-shadow:0 0 0 1px #111}
-.event h3{margin:0;font-size:14px}.event p{margin:4px 0 0;font-size:12px;color:#707984}
-.note{font-size:12px;line-height:1.6;color:#66707a}
-.footer{text-align:center;color:#8a929b;font-size:11px;padding:8px 0 30px}
-@media(max-width:520px){.search{flex-direction:column}.search button{height:48px}.grid{grid-template-columns:1fr 1fr}}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>PREMIUM GIFTS STORE - Delivery Tracking</title>
+  <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-<div class="header">
-  <h1>HAMPER GIFTS CENTER INDIA</h1>
-  <p>Delivery Tracking Portal</p>
-</div>
+<main class="wrap">
 
-<div class="container">
-  <div class="card">
-    <div class="section-title" style="margin-top:0">Track Your Parcel</div>
-    <div class="search">
-      <input id="mobile" inputmode="numeric" maxlength="10" placeholder="Enter registered mobile number">
-      <button onclick="track()">Track</button>
+  <div class="demo">DEMO TRACKING — वास्तविक courier tracking नहीं</div>
+
+  <!-- SHOP NAME -->
+  <header class="shop-header">
+    <h1>PREMIUM GIFTS STORE</h1>
+    <p>Delivery Tracking System</p>
+  </header>
+
+  <section class="card hero">
+    <div>
+      <p class="eyebrow">DELIVERY TRACKING</p>
+      <h2>Order #MS-1309</h2>
+      <p class="muted">Mahi Singh • Delhi → Gadia, Barabanki</p>
     </div>
-    <div id="error" style="display:none;color:#b42318;font-size:12px;margin-top:10px">Please enter the demo number: 9589577798</div>
-  </div>
 
-  <div id="result" class="result">
-    <div class="card">
-      <div class="top">
-        <div>
-          <h2>Vanshika Vaidya</h2>
-          <div class="id">Parcel ID: HGC-INV1002</div>
-        </div>
-        <div class="badge">IN TRANSIT</div>
+    <div class="eta">
+      <span>Expected</span>
+      <b>14 Sep</b>
+      <small>24 hours after dispatch</small>
+    </div>
+  </section>
+
+  <section class="card">
+    <div class="route">
+      <div>
+        <span class="dot done"></span>
+        <b>Delhi</b>
+        <small>Shipment picked & dispatched</small>
       </div>
 
-      <div class="section-title">Shipment Details</div>
-      <div class="grid">
-        <div class="item"><div class="label">Order / Invoice</div><div class="value">INV1002</div></div>
-        <div class="item"><div class="label">Courier</div><div class="value">Hamper Gifts Center</div></div>
-        <div class="item"><div class="label">Origin</div><div class="value">Delhi</div></div>
-        <div class="item"><div class="label">Destination</div><div class="value">Madhya Pradesh</div></div>
+      <div class="line"></div>
+
+      <div>
+        <span class="dot current"></span>
+        <b>~200 km before destination</b>
+        <small>In transit • moving toward Gadia</small>
       </div>
 
-      <div class="section-title">Current Route</div>
-      <div class="route">
-        <div class="line"><div class="progress"></div><span class="dot start"></span><span class="dot current"></span><span class="dot end"></span></div>
-        <div class="route-labels"><span>Delhi</span><span>In Transit</span><span>MP</span></div>
-        <div class="distance"> scan point: approximately 245 km from Delhi</div>
-      </div>
+      <div class="line"></div>
 
-      <div class="section-title">Tracking Updates</div>
-      <div class="timeline">
-        <div class="event"><h3>Shipment dispatched</h3><p>Delhi sorting facility • 04 Sep 2026</p></div>
-        <div class="event"><h3>In transit</h3><p>Transit scan • approx. 245 km from Delhi • 04 Sep 2026</p></div>
-        <div class="event"><h3>Next hub pending</h3><p>Destination-side processing will be shown after the next scan.</p></div>
-      </div>
-
-      <div class="section-title">Important</div>
-    
+      <div>
+        <span class="dot"></span>
+        <b>Gadia, Nawabganj</b>
+        <small>Barabanki, Uttar Pradesh • 225001</small>
       </div>
     </div>
-  </div>
+  </section>
 
-  <div class="footer">© 2026 Hamper Gifts Center India • Demo tracking interface</div>
-</div>
+  <section class="card">
+    <h2>Shipment Details</h2>
 
-<script>
-function track(){
-  const mobile=document.getElementById('mobile').value.trim();
-  const result=document.getElementById('result');
-  const error=document.getElementById('error');
-  if(mobile === '9589577798'){
-    error.style.display='none';
-    result.style.display='block';
-    result.scrollIntoView({behavior:'smooth',block:'start'});
-  }else{
-    result.style.display='none';
-    error.style.display='block';
-  }
-}
-</script>
+    <div class="grid">
+      <div>
+        <label>Customer</label>
+        <strong>Mahi Singh</strong>
+      </div>
+
+      <div>
+        <label>Mobile</label>
+        <strong>8127540880</strong>
+      </div>
+
+      <div>
+        <label>Dispatch Date</label>
+        <strong>13 Sep 2026</strong>
+      </div>
+
+      <div>
+        <label>Status</label>
+        <strong class="green">In Transit</strong>
+      </div>
+
+      <div class="full">
+        <label>Delivery Address</label>
+        <strong>
+          Primary School Gadia First, Vill +1, Gadia,
+          Tehsil Nawabganj, District Barabanki,
+          Uttar Pradesh — 225001
+        </strong>
+      </div>
+    </div>
+  </section>
+
+  <section class="card">
+    <h2>Tracking History</h2>
+
+    <div class="timeline">
+      <div>
+        <b>13 Sep • Dispatched from Delhi</b>
+        <span>Shipment handed over for transit</span>
+      </div>
+
+      <div class="active">
+        <b>14 Sep • In Transit</b>
+        <span>
+          Shipment has travelled approximately 200 km
+          toward destination
+        </span>
+      </div>
+
+      <div>
+        <b>14 Sep • Expected Delivery</b>
+        <span>Estimated arrival within 24 hours of dispatch</span>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    Demo UI for presentation/testing only.
+  </footer>
+
+</main>
 </body>
 </html>
