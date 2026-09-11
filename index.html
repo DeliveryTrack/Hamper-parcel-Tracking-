@@ -4,12 +4,10 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Premium Gifts Store - Track Order</title>
+<title>Premium Gifts Store - Demo Tracking</title>
 
 <style>
-*{
-  box-sizing:border-box;
-}
+*{box-sizing:border-box}
 
 body{
   margin:0;
@@ -19,18 +17,14 @@ body{
 }
 
 .header{
-  background:#ffffff;
+  background:#fff;
   padding:18px 20px;
   border-bottom:1px solid #e5e7eb;
-  position:sticky;
-  top:0;
-  z-index:10;
 }
 
 .logo{
   font-size:22px;
   font-weight:800;
-  letter-spacing:.5px;
 }
 
 .sub{
@@ -45,11 +39,27 @@ body{
   padding:18px 14px 40px;
 }
 
-.search-card{
+.demo{
+  background:#fff7d6;
+  border:1px solid #f0df91;
+  color:#725900;
+  padding:10px;
+  border-radius:8px;
+  text-align:center;
+  font-size:11px;
+  font-weight:bold;
+  margin-bottom:12px;
+}
+
+.search-card,
+.card{
   background:#fff;
-  padding:22px;
   border-radius:12px;
   box-shadow:0 2px 10px rgba(0,0,0,.06);
+}
+
+.search-card{
+  padding:22px;
 }
 
 .title{
@@ -72,10 +82,6 @@ input{
   padding:0 15px;
   font-size:16px;
   outline:none;
-}
-
-input:focus{
-  border-color:#4f46e5;
 }
 
 button{
@@ -107,11 +113,8 @@ button{
 }
 
 .card{
-  background:#fff;
-  border-radius:12px;
   padding:20px;
   margin-bottom:14px;
-  box-shadow:0 2px 10px rgba(0,0,0,.06);
 }
 
 .status{
@@ -181,6 +184,24 @@ button{
   grid-column:1/-1;
 }
 
+.delivery{
+  background:#f8f9ff;
+  border:1px solid #e1e4ff;
+  padding:18px;
+  border-radius:10px;
+  text-align:center;
+}
+
+.delivery small{
+  color:#667085;
+}
+
+.delivery strong{
+  display:block;
+  font-size:22px;
+  margin-top:5px;
+}
+
 .route-title{
   font-size:18px;
   font-weight:700;
@@ -223,14 +244,13 @@ button{
   z-index:2;
 }
 
-.step.done .circle{
+.step.done .circle,
+.step.current .circle{
   background:#4f46e5;
   border-color:#4f46e5;
 }
 
 .step.current .circle{
-  background:#4f46e5;
-  border-color:#4f46e5;
   box-shadow:0 0 0 5px #e7e7ff;
 }
 
@@ -249,24 +269,6 @@ button{
   color:#667085;
   font-size:13px;
   margin-top:4px;
-}
-
-.delivery{
-  background:#f8f9ff;
-  border:1px solid #e1e4ff;
-  padding:18px;
-  border-radius:10px;
-  text-align:center;
-}
-
-.delivery small{
-  color:#667085;
-}
-
-.delivery strong{
-  display:block;
-  font-size:22px;
-  margin-top:5px;
 }
 
 .footer{
@@ -306,220 +308,226 @@ button{
 
 <div class="container">
 
-  <!-- SEARCH -->
-  <div class="search-card">
+<div class="demo">
+  REAL TRACKING — DATA FOR TESTING 
+</div>
 
-    <div class="title">Track Your Order</div>
+<div class="search-card">
 
-    <div class="subtitle">
-      Enter your registered mobile number to view shipment details.
+  <div class="title">
+    Track Your Order
+  </div>
+
+  <div class="subtitle">
+    Enter your registered mobile number to view demo shipment details.
+  </div>
+
+  <input
+    type="tel"
+    id="mobile"
+    placeholder="Enter 10 digit mobile number"
+    maxlength="10"
+  >
+
+  <button onclick="trackOrder()">
+    TRACK ORDER
+  </button>
+
+  <div class="error" id="error">
+  Real order not found. Please check the mobile number.
+  </div>
+
+</div>
+
+
+<div class="result" id="result">
+
+<div class="card">
+
+  <div class="status">
+
+    <div class="status-left">
+
+      <div class="status-icon">
+        🚚
+      </div>
+
+      <div>
+        <h2>Shipment In Transit</h2>
+        <p>Real shipment is currently moving</p>
+      </div>
+
     </div>
 
-    <input
-      type="tel"
-      id="mobile"
-      placeholder="Enter 10 digit mobile number"
-      maxlength="10"
-    >
-
-    <button onclick="trackOrder()">
-      TRACK ORDER
-    </button>
-
-    <div class="error" id="error">
-      Order not found. Please check your mobile number.
+    <div class="badge">
+      IN TRANSIT
     </div>
 
   </div>
 
 
-  <!-- RESULT -->
-  <div class="result" id="result">
+  <div class="info">
 
-    <!-- STATUS CARD -->
-    <div class="card">
-
-      <div class="status">
-
-        <div class="status-left">
-
-          <div class="status-icon">🚚</div>
-
-          <div>
-            <h2>Shipment In Transit</h2>
-            <p>Shipment is currently moving</p>
-          </div>
-
-        </div>
-
-        <div class="badge">
-          IN TRANSIT
-        </div>
-
-      </div>
-
-
-      <div class="info">
-
-        <div class="info-item">
-          <label>Customer</label>
-          <strong>Mahi Singh</strong>
-        </div>
-
-        <div class="info-item">
-          <label>Order ID</label>
-          <strong>MS-1309</strong>
-        </div>
-
-        <div class="info-item">
-          <label>Mobile</label>
-          <strong>8127540880</strong>
-        </div>
-
-        <div class="info-item">
-          <label>Dispatch Date</label>
-          <strong>13 Sep 2026</strong>
-        </div>
-
-        <div class="info-item">
-          <label>Current Location</label>
-          <strong>200 KM from Delhi</strong>
-        </div>
-
-        <div class="info-item">
-          <label>Destination</label>
-          <strong>Gadia, Barabanki</strong>
-        </div>
-
-        <div class="info-item full">
-          <label>Delivery Address</label>
-          <strong>
-            Primary School Gadia First, Vill +1, Gadia,
-            Tehsil Nawabganj, Barabanki,
-            Uttar Pradesh - 225001
-          </strong>
-        </div>
-
-      </div>
-
+    <div class="info-item">
+      <label>Customer</label>
+      <strong>Mahi Singh</strong>
     </div>
 
-
-    <!-- DELIVERY -->
-    <div class="card">
-
-      <div class="delivery">
-        <small>Expected Delivery</small>
-        <strong>13 September 2026</strong>
-      </div>
-
+    <div class="info-item">
+      <label>Order ID</label>
+      <strong>MS-1309</strong>
     </div>
 
+    <div class="info-item">
+      <label>Mobile</label>
+      <strong>8127540880</strong>
+    </div>
 
-    <!-- TRACKING -->
-    <div class="card">
+    <div class="info-item">
+      <label>Dispatch Date</label>
+      <strong>13 Sep 2026</strong>
+    </div>
 
-      <div class="route-title">
-        Shipment Journey
-      </div>
+    <div class="info-item">
+      <label>Current Location</label>
+      <strong>200 KM from Delhi</strong>
+    </div>
 
-      <div class="timeline">
+    <div class="info-item">
+      <label>Destination</label>
+      <strong>Gadia, Barabanki</strong>
+    </div>
 
-        <div class="step done">
-
-          <div class="circle"></div>
-
-          <div class="step-title">
-            Shipment Booked
-          </div>
-
-          <div class="step-date">
-            13 Sep 2026
-          </div>
-
-          <div class="step-desc">
-            Order information received
-          </div>
-
-        </div>
-
-
-        <div class="step done">
-
-          <div class="circle"></div>
-
-          <div class="step-title">
-            Dispatched from Delhi
-          </div>
-
-          <div class="step-date">
-            13 Sep 2026
-          </div>
-
-          <div class="step-desc">
-            Shipment dispatched for delivery
-          </div>
-
-        </div>
-
-
-        <div class="step current">
-
-          <div class="circle"></div>
-
-          <div class="step-title">
-            In Transit
-          </div>
-
-          <div class="step-date">
-            13 Sep 2026
-          </div>
-
-          <div class="step-desc">
-            Shipment has covered approximately 200 KM
-          </div>
-
-        </div>
-
-
-        <div class="step">
-
-          <div class="circle"></div>
-
-          <div class="step-title">
-            Out for Delivery
-          </div>
-
-          <div class="step-date">
-            13 Sep 2026
-          </div>
-
-        </div>
-
-
-        <div class="step">
-
-          <div class="circle"></div>
-
-          <div class="step-title">
-            Delivered
-          </div>
-
-          <div class="step-date">
-            Expected: 13 Sep 2026
-          </div>
-
-        </div>
-
-      </div>
-
+    <div class="info-item full">
+      <label>Delivery Address</label>
+      <strong>
+        Primary School Gadia First, Vill +1, Gadia,
+        Tehsil Nawabganj, Barabanki,
+        Uttar Pradesh - 225001
+      </strong>
     </div>
 
   </div>
 
-  <div class="footer">
-  REAL TRACKING SYSTEM — data for testing Your Parcel 
+</div>
+
+
+<div class="card">
+
+  <div class="delivery">
+    <small>Expected Delivery</small>
+    <strong>13 September 2026</strong>
   </div>
+
+</div>
+
+
+<div class="card">
+
+  <div class="route-title">
+    Shipment Journey
+  </div>
+
+  <div class="timeline">
+
+
+    <div class="step done">
+
+      <div class="circle"></div>
+
+      <div class="step-title">
+        Shipment Booked
+      </div>
+
+      <div class="step-date">
+        11 Sep 2026
+      </div>
+
+      <div class="step-desc">
+        Order information received
+      </div>
+
+    </div>
+
+
+    <div class="step done">
+
+      <div class="circle"></div>
+
+      <div class="step-title">
+        Dispatched from Delhi
+      </div>
+
+      <div class="step-date">
+        13 Sep 2026
+      </div>
+
+      <div class="step-desc">
+        Shipment dispatched for delivery
+      </div>
+
+    </div>
+
+
+    <div class="step current">
+
+      <div class="circle"></div>
+
+      <div class="step-title">
+        In Transit
+      </div>
+
+      <div class="step-date">
+        11 Sep 2026
+      </div>
+
+      <div class="step-desc">
+        Shipment has covered approximately 200 KM
+      </div>
+
+    </div>
+
+
+    <div class="step">
+
+      <div class="circle"></div>
+
+      <div class="step-title">
+        Out for Delivery
+      </div>
+
+      <div class="step-date">
+        13 Sep 2026
+      </div>
+
+    </div>
+
+
+    <div class="step">
+
+      <div class="circle"></div>
+
+      <div class="step-title">
+        Delivered
+      </div>
+
+      <div class="step-date">
+        Expected: 13 Sep 2026
+      </div>
+
+    </div>
+
+
+  </div>
+
+</div>
+
+</div>
+
+
+<div class="footer">
+  REAL TRACKING SYSTEM — REAL COURIER TRACKING
+</div>
 
 </div>
 
@@ -549,6 +557,7 @@ function trackOrder(){
     error.style.display = "block";
 
   }
+
 }
 
 </script>
