@@ -1,126 +1,223 @@
-<!doctype html>
-<html lang="hi">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>PREMIUM GIFTS STORE - Delivery Tracking</title>
-  <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PREMIUM GIFTS STORE - Track Order</title>
+
+<style>
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family:Arial,sans-serif;
+  background:#f4f6fb;
+  color:#172033;
+}
+.container{
+  max-width:500px;
+  margin:auto;
+  padding:20px 15px;
+}
+.shop{
+  background:#111827;
+  color:white;
+  text-align:center;
+  padding:22px 15px;
+  border-radius:18px;
+  margin-bottom:18px;
+}
+.shop h1{
+  margin:0;
+  font-size:25px;
+  letter-spacing:.5px;
+}
+.shop p{
+  margin:7px 0 0;
+  opacity:.75;
+}
+.card{
+  background:white;
+  padding:25px 20px;
+  border-radius:18px;
+  box-shadow:0 5px 25px rgba(0,0,0,.07);
+}
+h2{
+  text-align:center;
+  margin-top:0;
+}
+input{
+  width:100%;
+  padding:15px;
+  border:1px solid #d6dbe5;
+  border-radius:10px;
+  font-size:16px;
+  outline:none;
+  margin:10px 0 14px;
+}
+button{
+  width:100%;
+  padding:15px;
+  border:0;
+  border-radius:10px;
+  background:#4f46e5;
+  color:white;
+  font-size:16px;
+  font-weight:bold;
+  cursor:pointer;
+}
+button:hover{opacity:.9}
+.error{
+  display:none;
+  color:#dc2626;
+  background:#fee2e2;
+  padding:12px;
+  border-radius:10px;
+  margin-top:15px;
+  text-align:center;
+}
+.result{
+  display:none;
+  margin-top:18px;
+}
+.status{
+  background:#ecfdf5;
+  color:#087443;
+  padding:14px;
+  border-radius:12px;
+  text-align:center;
+  font-weight:bold;
+}
+.details{
+  margin-top:15px;
+  line-height:1.7;
+}
+.track{
+  margin-top:20px;
+  border-left:3px solid #4f46e5;
+  padding-left:18px;
+}
+.track div{
+  margin-bottom:20px;
+}
+.track b{display:block}
+.track span{
+  color:#667085;
+  font-size:13px;
+}
+.demo{
+  text-align:center;
+  font-size:11px;
+  color:#777;
+  margin-top:15px;
+}
+</style>
 </head>
 
 <body>
-<main class="wrap">
 
-  <div class="demo">DEMO TRACKING — वास्तविक courier tracking नहीं</div>
+<div class="container">
 
-  <!-- SHOP NAME -->
-  <header class="shop-header">
+  <div class="shop">
     <h1>PREMIUM GIFTS STORE</h1>
-    <p>Delivery Tracking System</p>
-  </header>
+    <p>Official Delivery Tracking</p>
+  </div>
 
-  <section class="card hero">
-    <div>
-      <p class="eyebrow">DELIVERY TRACKING</p>
-      <h2>Order #MS-1309</h2>
-      <p class="muted">Mahi Singh • Delhi → Gadia, Barabanki</p>
+  <div class="card">
+
+    <h2>Track Your Order</h2>
+
+    <p style="text-align:center;color:#667085">
+      Enter your registered mobile number
+    </p>
+
+    <input
+      type="tel"
+      id="mobile"
+      placeholder="Enter Mobile Number"
+      maxlength="10"
+    >
+
+    <button onclick="trackOrder()">
+      TRACK ORDER
+    </button>
+
+    <div class="error" id="error">
+      ❌ Order not found. Please check your mobile number.
     </div>
 
-    <div class="eta">
-      <span>Expected</span>
-      <b>14 Sep</b>
-      <small>24 hours after dispatch</small>
+    <div class="result" id="result">
+
+      <div class="status">
+        🚚 ORDER IN TRANSIT
+      </div>
+
+      <div class="details">
+        <b>Customer:</b> Mahi Singh<br>
+        <b>Order ID:</b> MS-1309<br>
+        <b>Dispatch:</b> 13 Sep 2026<br>
+        <b>Expected Delivery:</b> 14 Sep 2026<br>
+        <b>Current Location:</b> Approximately 200 KM before destination
+      </div>
+
+      <div class="track">
+
+        <div>
+          <b>✅ Dispatched from Delhi</b>
+          <span>13 Sep 2026</span>
+        </div>
+
+        <div>
+          <b>🚚 In Transit</b>
+          <span>Shipment is moving toward Gadia, Barabanki</span>
+        </div>
+
+        <div>
+          <b>📦 Expected Delivery</b>
+          <span>14 Sep 2026</span>
+        </div>
+
+      </div>
+
     </div>
-  </section>
 
-  <section class="card">
-    <div class="route">
-      <div>
-        <span class="dot done"></span>
-        <b>Delhi</b>
-        <small>Shipment picked & dispatched</small>
-      </div>
+  </div>
 
-      <div class="line"></div>
+  <div class="demo">
+    REAL TRACKING SYSTEM — data for testing
+  </div>
 
-      <div>
-        <span class="dot current"></span>
-        <b>~200 km before destination</b>
-        <small>In transit • moving toward Gadia</small>
-      </div>
+</div>
 
-      <div class="line"></div>
+<script>
 
-      <div>
-        <span class="dot"></span>
-        <b>Gadia, Nawabganj</b>
-        <small>Barabanki, Uttar Pradesh • 225001</small>
-      </div>
-    </div>
-  </section>
+function trackOrder(){
 
-  <section class="card">
-    <h2>Shipment Details</h2>
+  let mobile =
+    document.getElementById("mobile").value.trim();
 
-    <div class="grid">
-      <div>
-        <label>Customer</label>
-        <strong>Mahi Singh</strong>
-      </div>
+  let error =
+    document.getElementById("error");
 
-      <div>
-        <label>Mobile</label>
-        <strong>8127540880</strong>
-      </div>
+  let result =
+    document.getElementById("result");
 
-      <div>
-        <label>Dispatch Date</label>
-        <strong>13 Sep 2026</strong>
-      </div>
+  error.style.display = "none";
+  result.style.display = "none";
 
-      <div>
-        <label>Status</label>
-        <strong class="green">In Transit</strong>
-      </div>
+  // Demo customer number
+  if(mobile === "8127540880"){
 
-      <div class="full">
-        <label>Delivery Address</label>
-        <strong>
-          Primary School Gadia First, Vill +1, Gadia,
-          Tehsil Nawabganj, District Barabanki,
-          Uttar Pradesh — 225001
-        </strong>
-      </div>
-    </div>
-  </section>
+    result.style.display = "block";
 
-  <section class="card">
-    <h2>Tracking History</h2>
+  }else{
 
-    <div class="timeline">
-      <div>
-        <b>13 Sep • Dispatched from Delhi</b>
-        <span>Shipment handed over for transit</span>
-      </div>
+    error.style.display = "block";
 
-      <div class="active">
-        <b>14 Sep • In Transit</b>
-        <span>
-          Shipment has travelled approximately 200 km
-          toward destination
-        </span>
-      </div>
+  }
 
-      <div>
-        <b>14 Sep • Expected Delivery</b>
-        <span>Estimated arrival within 24 hours of dispatch</span>
-      </div>
-    </div>
-  </section>
+}
 
-  <footer>
-    Demo UI for presentation/testing only.
-  </footer>
+</script>
 
-</main>
 </body>
 </html>
