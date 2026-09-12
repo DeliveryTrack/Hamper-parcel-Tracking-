@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Premium Gifts Store - Real Tracking</title>
+<title>LUXURY GIFT STORE - Shipment Tracking</title>
 
 <style>
 *{box-sizing:border-box}
@@ -25,6 +25,7 @@ body{
 .logo{
   font-size:22px;
   font-weight:800;
+  letter-spacing:.3px;
 }
 
 .sub{
@@ -84,6 +85,11 @@ input{
   outline:none;
 }
 
+input:focus{
+  border-color:#4f46e5;
+  box-shadow:0 0 0 3px #e7e7ff;
+}
+
 button{
   width:100%;
   height:52px;
@@ -95,6 +101,10 @@ button{
   font-size:16px;
   font-weight:700;
   cursor:pointer;
+}
+
+button:hover{
+  background:#4338ca;
 }
 
 .error{
@@ -178,6 +188,7 @@ button{
 
 .info-item strong{
   font-size:14px;
+  line-height:1.5;
 }
 
 .full{
@@ -200,6 +211,13 @@ button{
   display:block;
   font-size:22px;
   margin-top:5px;
+}
+
+.delivery-time{
+  display:block;
+  font-size:14px !important;
+  color:#4f46e5;
+  margin-top:7px;
 }
 
 .route-title{
@@ -279,6 +297,7 @@ button{
 }
 
 @media(max-width:500px){
+
   .info{
     grid-template-columns:1fr;
   }
@@ -295,6 +314,7 @@ button{
   .badge{
     white-space:nowrap;
   }
+
 }
 </style>
 </head>
@@ -302,15 +322,24 @@ button{
 <body>
 
 <header class="header">
-  <div class="logo">PREMIUM GIFTS STORE</div>
-  <div class="sub">Shipment Tracking</div>
+
+  <div class="logo">
+    LUXURY GIFT STORE
+  </div>
+
+  <div class="sub">
+    Shipment Tracking
+  </div>
+
 </header>
+
 
 <div class="container">
 
 <div class="demo">
-  REAL TRACKING — DATA FOR TESTING 
+  REAL TRACKING — DATA FOR TESTING
 </div>
+
 
 <div class="search-card">
 
@@ -319,7 +348,7 @@ button{
   </div>
 
   <div class="subtitle">
-    Enter your registered mobile number to view demo shipment details.
+    Enter your registered mobile number to view shipment details.
   </div>
 
   <input
@@ -334,13 +363,16 @@ button{
   </button>
 
   <div class="error" id="error">
-  Real order not found. Please check the mobile number.
+    Real order not found. Please check the mobile number.
   </div>
 
 </div>
 
 
 <div class="result" id="result">
+
+
+<!-- SHIPMENT DETAILS -->
 
 <div class="card">
 
@@ -353,8 +385,15 @@ button{
       </div>
 
       <div>
-        <h2>Shipment In Transit</h2>
-        <p>Real shipment is currently moving</p>
+
+        <h2>
+          Shipment In Transit
+        </h2>
+
+        <p>
+          Shipment is currently moving
+        </p>
+
       </div>
 
     </div>
@@ -369,64 +408,136 @@ button{
   <div class="info">
 
     <div class="info-item">
-      <label>Customer</label>
-      <strong>Mahi Singh</strong>
+
+      <label>
+        Customer
+      </label>
+
+      <strong>
+        Aakriti Soni
+      </strong>
+
     </div>
 
-    <div class="info-item">
-      <label>Order ID</label>
-      <strong>MS-1309</strong>
-    </div>
 
     <div class="info-item">
-      <label>Mobile</label>
-      <strong>8127540880</strong>
+
+      <label>
+        Order ID
+      </label>
+
+      <strong>
+        AS-1309
+      </strong>
+
     </div>
 
-    <div class="info-item">
-      <label>Dispatch Date</label>
-      <strong>13 Sep 2026</strong>
-    </div>
 
     <div class="info-item">
-      <label>Current Location</label>
-      <strong>200 KM from Delhi</strong>
+
+      <label>
+        Mobile
+      </label>
+
+      <strong>
+        6265525924
+      </strong>
+
     </div>
 
+
     <div class="info-item">
-      <label>Destination</label>
-      <strong>Gadia, Barabanki</strong>
+
+      <label>
+        Dispatch Date
+      </label>
+
+      <strong>
+        12 Sep 2026
+      </strong>
+
     </div>
+
+
+    <div class="info-item">
+
+      <label>
+        Current Location
+      </label>
+
+      <strong>
+        Indore
+      </strong>
+
+    </div>
+
+
+    <div class="info-item">
+
+      <label>
+        Destination
+      </label>
+
+      <strong>
+        Indore, Madhya Pradesh
+      </strong>
+
+    </div>
+
 
     <div class="info-item full">
-      <label>Delivery Address</label>
+
+      <label>
+        Delivery Address
+      </label>
+
       <strong>
-        Primary School Gadia First, Vill +1, Gadia,
-        Tehsil Nawabganj, Barabanki,
-        Uttar Pradesh - 225001
+        304 Infinity Stay, Ravidas Nagar,
+        Bapat, Ravidas Nagar,
+        Government School,
+        Indore,
+        Madhya Pradesh - 452010,
+        India
       </strong>
+
     </div>
 
   </div>
 
 </div>
 
+
+<!-- EXPECTED DELIVERY -->
 
 <div class="card">
 
   <div class="delivery">
-    <small>Expected Delivery</small>
-    <strong>13 September 2026</strong>
+
+    <small>
+      Expected Delivery
+    </small>
+
+    <strong>
+      15 September 2026
+    </strong>
+
+    <strong class="delivery-time">
+      Between 5:00 PM - 6:00 PM
+    </strong>
+
   </div>
 
 </div>
 
+
+<!-- SHIPMENT JOURNEY -->
 
 <div class="card">
 
   <div class="route-title">
     Shipment Journey
   </div>
+
 
   <div class="timeline">
 
@@ -455,11 +566,11 @@ button{
       <div class="circle"></div>
 
       <div class="step-title">
-        Dispatched from Delhi
+        Dispatched from Indore
       </div>
 
       <div class="step-date">
-        11 Sep 2026
+        12 Sep 2026
       </div>
 
       <div class="step-desc">
@@ -478,11 +589,11 @@ button{
       </div>
 
       <div class="step-date">
-        11 Sep 2026
+        12 Sep 2026
       </div>
 
       <div class="step-desc">
-        Shipment has covered approximately 200 KM
+        Shipment is currently in transit
       </div>
 
     </div>
@@ -497,7 +608,11 @@ button{
       </div>
 
       <div class="step-date">
-        12 Sep 2026
+        15 Sep 2026
+      </div>
+
+      <div class="step-desc">
+        Expected between 5:00 PM - 6:00 PM
       </div>
 
     </div>
@@ -512,7 +627,12 @@ button{
       </div>
 
       <div class="step-date">
-        Expected: 13 Sep 2026
+        Expected: 15 Sep 2026
+      </div>
+
+      <div class="step-desc">
+        Delivery expected at the customer's address
+        between 5:00 PM - 6:00 PM
       </div>
 
     </div>
@@ -526,7 +646,7 @@ button{
 
 
 <div class="footer">
-  REAL TRACKING SYSTEM — REAL COURIER TRACKING
+  LUXURY GIFT STORE — SHIPMENT TRACKING
 </div>
 
 </div>
@@ -545,12 +665,19 @@ function trackOrder(){
   const error =
     document.getElementById("error");
 
+
   result.style.display = "none";
   error.style.display = "none";
 
-  if(mobile === "8127540880"){
+
+  if(mobile === "6265525924"){
 
     result.style.display = "block";
+
+    result.scrollIntoView({
+      behavior:"smooth",
+      block:"start"
+    });
 
   }else{
 
